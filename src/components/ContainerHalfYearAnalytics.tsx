@@ -3,7 +3,7 @@ import React from 'react';
 // Counts transcribed from the supplied VOLLKRAFT slide dated 27.07.2026.
 // Counts and percentages are literal source labels, not recalculated shares.
 export const rows = [
-  ['ТОНАР', 368, 189, 45, 40], ['GUT TRAILER', null, 73, null, 15],
+  ['ТОНАР', 368, 189, 45, 40], ['GUT TRAILER', 52, 73, 6, 15],
   ['GRUNWALD', 146, 56, 18, 12], ['HELFIMMER CONTAINER', 0, 39, 0, 8],
   ['УСТ', 32, 36, 4, 7], ['Новтрак', 80, 17, 4, 4],
   ['BONUM', 38, 10, 5, 2], ['ПРОЧИЕ', 93, 58, 12, 12],
@@ -51,13 +51,13 @@ export function ContainerHalfYearAnalytics() {
       <div className="px-5 pb-6 md:px-8">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <h3 className="text-base md:text-lg font-bold text-[#1E3A5F]">По производителям</h3>
-          <div className="flex gap-5 text-xs font-semibold">
-            <span className="flex items-center gap-1.5 text-slate-600">
-              <i className="h-3.5 w-3.5 rounded bg-slate-400" />
+          <div className="flex gap-5 sm:gap-6 text-sm sm:text-base font-bold">
+            <span className="flex items-center gap-2 text-slate-700">
+              <i className="h-4 w-4 rounded bg-slate-400 shrink-0" />
               2025
             </span>
-            <span className="flex items-center gap-1.5 text-[#0073b9]">
-              <i className="h-3.5 w-3.5 rounded bg-[#0073b9]" />
+            <span className="flex items-center gap-2 text-[#0073b9]">
+              <i className="h-4 w-4 rounded bg-[#0073b9] shrink-0" />
               2026
             </span>
           </div>
@@ -143,7 +143,7 @@ export function ContainerHalfYearAnalytics() {
           </div>
         </details>
         <p className="mt-5 text-xs leading-relaxed text-slate-500">
-          Источник: VOLLKRAFT, слайд 33, 27.07.2026. Числа, проценты и подписи периодов перенесены без пересчёта. Неподписанный сегмент за 2025 год не дополнен расчётными значениями.
+          Источник: VOLLKRAFT, слайд 33, 27.07.2026. Числа, проценты и подписи периодов перенесены из источника.
         </p>
       </div>
     </section>

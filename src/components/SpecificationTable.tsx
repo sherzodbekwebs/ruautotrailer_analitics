@@ -244,11 +244,6 @@ export const SpecificationTable = ({ data }: { data: TrailerSpec[] }) => {
                     <span className="text-sm font-black text-[#1E3A5F] uppercase block leading-tight">
                       {item.brand}
                     </span>
-                    {item.source && (
-                      <span className="text-[10px] font-semibold text-slate-400 block mt-0.5">
-                        {item.source}
-                      </span>
-                    )}
                   </td>
 
                   {/* 3. Фото - FIXED STICKY (with shadow separator) */}

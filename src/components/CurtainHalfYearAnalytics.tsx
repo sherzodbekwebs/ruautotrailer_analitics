@@ -52,13 +52,13 @@ export function CurtainHalfYearAnalytics() {
       <div className="px-5 pb-6 md:px-8">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           <h3 className="text-base md:text-lg font-bold text-[#1E3A5F]">По производителям</h3>
-          <div className="flex gap-5 text-xs font-semibold">
-            <span className="flex items-center gap-1.5 text-slate-600">
-              <i className="h-3.5 w-3.5 rounded bg-slate-400" />
+          <div className="flex gap-5 sm:gap-6 text-sm sm:text-base font-bold">
+            <span className="flex items-center gap-2 text-slate-700">
+              <i className="h-4 w-4 rounded bg-slate-400 shrink-0" />
               2025
             </span>
-            <span className="flex items-center gap-1.5 text-[#0073b9]">
-              <i className="h-3.5 w-3.5 rounded bg-[#0073b9]" />
+            <span className="flex items-center gap-2 text-[#0073b9]">
+              <i className="h-4 w-4 rounded bg-[#0073b9] shrink-0" />
               2026
             </span>
           </div>
