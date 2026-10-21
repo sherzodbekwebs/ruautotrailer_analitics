@@ -144,7 +144,8 @@ export default function App() {
           {activeCategory.startsWith('container-') && <ContainerHalfYearAnalytics />}
           {activeCategory === 'reefer-3' && <ReeferHalfYearAnalytics />}
 
-          {/* Market Share: Faqat tanlangan kategoriya uchun */}
+          {/* Market Share: Uchunchi div kodda saqlangan, lekin UI da chiqmaydi */}
+          {/* 
           {activeCategory === 'curtain-3' && (
             <div className="print:block print:mb-10">
               <FadeIn>
@@ -152,6 +153,7 @@ export default function App() {
               </FadeIn>
             </div>
           )}
+          */}
 
           {/* Grafika va Jadval bo'limi */}
           {filteredData.length > 0 && (

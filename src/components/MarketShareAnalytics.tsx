@@ -17,9 +17,9 @@ const SmallDonut = ({ data, year }: { data: MarketShareData, year: string }) => 
   <div className="flex flex-col items-center w-full py-2 relative z-10">
     <p className="text-[13px] font-black text-[#1E3A5F]  tracking-widest mb-1">{year} (янв-март)</p>
     <div className="h-[190px] w-full relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-20 bg-white/40 px-2 py-1 rounded-full backdrop-blur-[2px]">
-        <p className="text-2xl font-black text-[#1E3A5F] leading-none">{data.total.toLocaleString()}</p>
-        <p className="text-[8px] font-bold text-slate-500 uppercase">ед.</p>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none z-20 bg-white/70 px-3 py-1.5 rounded-full backdrop-blur-[2px] shadow-xs">
+        <p className="text-2xl sm:text-3xl font-black text-[#1E3A5F] leading-none">{data.total.toLocaleString()}</p>
+        <p className="text-[10px] font-black text-slate-500 uppercase mt-0.5">ед.</p>
       </div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
@@ -91,13 +91,14 @@ export const MarketShareAnalytics = ({ data2025, data2026 }: MarketShareAnalytic
 
   return (
     <div className="quarter-panel mb-12">
-      {/* 1. UMUMIY SARLAVHA SECTIONI */}
+      {/* 1. UMUMIY SARLAVHA SECTIONI - UI da ko'rinmaydi, kodda saqlangan */}
+      {/* 
       <FadeIn className="mb-3 ">
         <h3 className=" font-black text-[#1E3A5F]  tracking-tighter ">
           Рынок полуприцепов · январь–март
         </h3>
-
-      </FadeIn>
+      </FadeIn> 
+      */}
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
 
@@ -157,24 +158,24 @@ export const MarketShareAnalytics = ({ data2025, data2026 }: MarketShareAnalytic
                   <td className="p-4 border-r border-slate-200">
                     <div className="flex items-center gap-3">
                       <div className="w-4 h-4 bg-[#1E3A5F] rounded flex items-center justify-center text-white text-[10px]">∑</div>
-                      <span className="text-sm font-black text-[#1E3A5F] uppercase">ИТОГО РЫНОК</span>
+                      <span className="text-base font-black text-[#1E3A5F] uppercase">ИТОГО РЫНОК</span>
                     </div>
                   </td>
                   <td className="p-4 text-center border-r border-slate-200 text-[#00529B]">
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-sm">{data2026.total.toLocaleString()} ед.</span>
-                      <span className="text-xs opacity-60">(100%)</span>
+                      <span className="text-base md:text-lg font-black">{data2026.total.toLocaleString()} ед.</span>
+                      <span className="text-sm md:text-base font-bold opacity-80">(100%)</span>
                     </div>
                   </td>
                   <td className="p-4 text-center border-r border-slate-200 text-slate-700">
                     <div className="flex items-center justify-center gap-2">
-                      <span className="text-sm">{data2025.total.toLocaleString()} ед.</span>
-                      <span className="text-xs opacity-60">(100%)</span>
+                      <span className="text-base md:text-lg font-black">{data2025.total.toLocaleString()} ед.</span>
+                      <span className="text-sm md:text-base font-bold opacity-80">(100%)</span>
                     </div>
                   </td>
                   <td className="p-4 text-center">
-                    <div className={`flex items-center justify-center gap-2 text-xs font-black ${globalTotalDiff < 0 ? 'text-rose-600' : 'text-emerald-600'}`}>
-                      {globalTotalDiff < 0 ? <TrendingDown size={14} /> : <TrendingUp size={14} />}
+                    <div className={`flex items-center justify-center gap-2 text-sm font-black ${globalTotalDiff < 0 ? 'text-rose-600' : 'text-emerald-600'}`}>
+                      {globalTotalDiff < 0 ? <TrendingDown size={16} /> : <TrendingUp size={16} />}
                       <span>{globalTotalDiff > 0 ? `+${globalTotalDiff}` : globalTotalDiff} ед. ({globalPercentDiff.toFixed(1)}%)</span>
                     </div>
                   </td>
@@ -186,28 +187,28 @@ export const MarketShareAnalytics = ({ data2025, data2026 }: MarketShareAnalytic
                     <td className="p-4 border-r border-slate-50">
                       <div className="flex items-center gap-3">
                         <div className="w-3.5 h-3.5 rounded-full shrink-0 shadow-sm" style={{ backgroundColor: row.color }} />
-                        <span className="text-sm font-black text-[#1E3A5F] uppercase">{row.brand}</span>
+                        <span className="text-sm sm:text-base font-black text-[#1E3A5F] uppercase">{row.brand}</span>
                       </div>
                     </td>
                     <td className="p-4 text-center border-r border-slate-50 bg-blue-50/5 text-[#00529B]">
                       <div className="flex items-center justify-center gap-2 font-black">
-                        <span className="text-sm">{row.c26.toLocaleString()}</span>
-                        <span className="text-xs opacity-60">({row.p26}%)</span>
+                        <span className="text-base md:text-lg font-black">{row.c26.toLocaleString()}</span>
+                        <span className="text-sm md:text-base font-bold opacity-75">({row.p26}%)</span>
                       </div>
                     </td>
                     <td className="p-4 text-center border-r border-slate-50 text-slate-700 font-bold">
                       <div className="flex items-center justify-center gap-2">
-                        <span className="text-sm">{row.c25.toLocaleString()}</span>
-                        <span className="text-xs opacity-60">({row.p25}%)</span>
+                        <span className="text-base md:text-lg font-black">{row.c25.toLocaleString()}</span>
+                        <span className="text-sm md:text-base font-bold opacity-75">({row.p25}%)</span>
                       </div>
                     </td>
-                    <td className="p-4 text-center font-black text-xs">
+                    <td className="p-4 text-center font-black">
                       <div className="flex items-center justify-center gap-2 whitespace-nowrap">
-                        <div className={`flex items-center gap-1 ${row.countDiff > 0 ? 'text-emerald-500' : row.countDiff < 0 ? 'text-rose-500' : 'text-slate-400'}`}>
-                          {row.countDiff > 0 ? <ArrowUpRight size={14} /> : row.countDiff < 0 ? <ArrowDownRight size={14} /> : <Minus size={14} />}
+                        <div className={`flex items-center gap-1 text-sm font-black ${row.countDiff > 0 ? 'text-emerald-500' : row.countDiff < 0 ? 'text-rose-500' : 'text-slate-400'}`}>
+                          {row.countDiff > 0 ? <ArrowUpRight size={16} /> : row.countDiff < 0 ? <ArrowDownRight size={16} /> : <Minus size={16} />}
                           <span>{row.countDiff > 0 ? `+${row.countDiff}` : row.countDiff} ед.</span>
                         </div>
-                        <span className={`text-[10px] ${row.percentDiff > 0 ? 'text-emerald-500' : row.percentDiff < 0 ? 'text-rose-500' : 'text-slate-400'}`}>
+                        <span className={`text-xs sm:text-sm font-bold ${row.percentDiff > 0 ? 'text-emerald-500' : row.percentDiff < 0 ? 'text-rose-500' : 'text-slate-400'}`}>
                           ({row.percentDiff > 0 ? `+${row.percentDiff.toFixed(1)}` : row.percentDiff.toFixed(1)}%)
                         </span>
                       </div>
